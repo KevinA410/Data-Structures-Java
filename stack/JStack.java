@@ -9,8 +9,8 @@ package stack;
  */
 public class JStack<T> {
 	private T item;
-	private int size;
 	private JStack<T> next;
+	private int size = 0;
 	
 	/**
 	 * Creates an empty stack.
@@ -18,7 +18,6 @@ public class JStack<T> {
 	public JStack(){
 		item = null;
 		next = null;
-		size = 0;
 	}
 	
 	/**
@@ -28,18 +27,15 @@ public class JStack<T> {
 	public void push(T item) {
 		if(this.item == null) {
 			this.item = item;
-			size++;
-		}
-		else {
+		}else {
 			JStack<T> node = new JStack<>();
 			node.item = this.item;
-			node.size = size;
 			node.next = next;
 			
 			this.item = item;
 			next = node;
-			size = node.size += 1;
 		}
+		size++;
 	}
 	
 	/**
@@ -47,12 +43,14 @@ public class JStack<T> {
 	 * @return
 	 */
 	public T pop() {
-		T pop = item;
+		if(item == null ) return null;
+		if(next == null) next = new JStack<T>();
 		
-		JStack<T> node = (next != null) ? next : new JStack<T>();
-		item = node.item;
-		next = node.next;
-
+		T pop = item;
+		item = next.item;
+		next = next.next;
+		size--;
+		
 		return pop;
 	}
 	
@@ -78,6 +76,7 @@ public class JStack<T> {
 	public void clear() {
 		item = null;
 		next = null;
+		size = 0;
 	}
 	
 	/**
@@ -94,7 +93,7 @@ public class JStack<T> {
 	 * @return
 	 */	
 	public boolean exist(T item) {
-		if(this.item != item && this.next == null) return false;
+		if(this.item != item && next == null) return false;
 		else if(this.item == item) return true;
 		else return next.exist(item);
 	}
