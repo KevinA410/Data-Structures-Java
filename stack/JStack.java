@@ -92,15 +92,10 @@ public class JStack<T> {
 	 * Returns if exist an specified item into the stack.
 	 * @param item
 	 * @return
-	 */
+	 */	
 	public boolean exist(T item) {
-		boolean exist = false;
-		
-		JStack<T> iter = this;
-		while(iter != null) {
-			if(iter.item == item) exist = true;
-			iter = iter.next;
-		}
-		return exist;
+		if(this.item != item && this.next == null) return false;
+		else if(this.item == item) return true;
+		else return next.exist(item);
 	}
 }
