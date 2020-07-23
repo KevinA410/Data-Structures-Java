@@ -66,7 +66,7 @@ public class JQueue<T> {
 	 * @return
 	 */
 	public boolean isEmpty() {
-		return (size == 0);
+		return (item == null);
 	}
 	
 	/**
