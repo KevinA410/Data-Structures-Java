@@ -5,7 +5,7 @@ package queue;
  * The usual offer and poll operations are provided, as well as a method to peek at the top item on the queue,
  * a method to test for whether the stack is empty, a method to test if an specified item exist, and a method to remove all items in the queue.
  * @author Kevin Arias
- *
+ * @param <T>
  */
 public class JQueue<T> {
 	private T item;
@@ -13,7 +13,7 @@ public class JQueue<T> {
 	private int size = 0;
 	
 	/**
-	 * Creates an empty queue
+	 * Creates an empty queue.
 	 */
 	public JQueue() {
 		item = null;
@@ -39,7 +39,7 @@ public class JQueue<T> {
 	
 	/**
 	 * Retrieves and remove the object at the head of this queue.
-	 * @return
+	 * @return The head of the queue
 	 */
 	public T poll() {
 		if(item == null) return null;
@@ -55,7 +55,7 @@ public class JQueue<T> {
 	
 	/**
 	 * Looks at the item at the top of this queue without remove it.
-	 * @return
+	 * @return The head of the queue
 	 */
 	public T peek() {
 		return item;
@@ -63,7 +63,7 @@ public class JQueue<T> {
 	
 	/**
 	 * Test if this stack has no items.
-	 * @return
+	 * @return True if the queue is empty
 	 */
 	public boolean isEmpty() {
 		return (item == null);
@@ -81,7 +81,7 @@ public class JQueue<T> {
 	
 	/**
 	 * Retrieves the number of items that is containing in the queue.
-	 * @return
+	 * @return The number of items of the queue
 	 */
 	public int size() {
 		return size;
@@ -90,7 +90,7 @@ public class JQueue<T> {
 	/**
 	 * Returns if exist an specified item into the queue.
 	 * @param item
-	 * @return
+	 * @return True if exist the item
 	 */
 	public boolean exist(T item) {
 		if(this.item == null) return false;

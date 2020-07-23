@@ -3,7 +3,6 @@ package queue;
 /**
  * The JDeque class represents a queue that supports elements insertions and removal at both ends.
  * @author Kevin Arias
- *
  * @param <T>
  */
 public class JDeque<T>{
@@ -13,7 +12,7 @@ public class JDeque<T>{
 	private int size = 0;
 	
 	/**
-	 * Creates an empty deque
+	 * Creates an empty deque.
 	 */
 	public JDeque() {
 		item = null;
@@ -22,8 +21,8 @@ public class JDeque<T>{
 	}
 	
 	/**
-	 * Insert an specified item in the top of this deque
-	 * @param
+	 * Insert an specified item in the top of this deque.
+	 * @param item
 	 */
 	public void offerFront(T item) {
 		if(this.item == null) {
@@ -42,8 +41,8 @@ public class JDeque<T>{
 	}
 	
 	/**
-	 * Insert an specified item in the last position of this deque
-	 * @param
+	 * Insert an specified item in the last position of this deque.
+	 * @param item
 	 */
 	public void offerBack(T item) {
 		if(this.item == null) {
@@ -60,8 +59,8 @@ public class JDeque<T>{
 	}
 	
 	/**
-	 * Returns and removes the first item of this deque
-	 * @return
+	 * Returns and removes the first item of this deque.
+	 * @return The head of the deque
 	 */
 	public T pollFront() {
 		if(item == null) return null;
@@ -76,8 +75,8 @@ public class JDeque<T>{
 	}
 	
 	/**
-	 * Returns and removes the last item of this deque
-	 * @return
+	 * Returns and removes the last item of this deque.
+	 * @return The tail of the deque
 	 */
 	public T pollBack() {
 		if(last.item == null) return null;
@@ -91,41 +90,41 @@ public class JDeque<T>{
 	}
 	
 	/**
-	 * Looks at the item at the top of this deque without remove it
-	 * @return
+	 * Looks at the item at the top of this deque without remove it.
+	 * @return The head of the deque
 	 */
 	public T peekFirst() {
 		return item;
 	}
 	
 	/**
-	 * Looks at the last item from this deque without remove it
-	 * @return
+	 * Looks at the last item from this deque without remove it.
+	 * @return The tail of the deque
 	 */
 	public T peekLast() {
 		return last.item;
 	}
 	
 	/**
-	 * Returns the number of items that is containing in the deque
-	 * @return
+	 * Returns the number of items that is containing in the deque.
+	 * @return The number of items of the deque
 	 */
 	public int size() {
 		return size;
 	}
 	
 	/**
-	 * Test if this deque has no items
-	 * @return
+	 * Test if this deque has no items.
+	 * @return True if the deque is empty
 	 */
 	public boolean isEmpty() {
 		return (item == null);
 	}
 	
 	/**
-	 * Returns if exist an specified item into the deque
+	 * Test if exist an specified item into the deque.
 	 * @param item
-	 * @return
+	 * @return True if exist the specified item
 	 */
 	public boolean exist(T item) {
 		if(this.item == null) return false;
@@ -134,7 +133,7 @@ public class JDeque<T>{
 	}
 	
 	/**
-	 * Remove all of the items from this deque
+	 * Remove all of the items from this deque.
 	 */
 	public void clear() {
 		item = null;

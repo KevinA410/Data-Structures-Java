@@ -5,7 +5,7 @@ package stack;
  * The usual push and pop operations are provided, as well as a method to peek at the top item on the stack, 
  * a method to test for whether the stack is empty, a method to test if an specified item exist, and a method to remove all items in the stack.
  * @author Kevin Arias
- *
+ * @param <T>
  */
 public class JStack<T> {
 	private T item;
@@ -40,7 +40,7 @@ public class JStack<T> {
 	
 	/**
 	 * Removes the object at the top of this stack.
-	 * @return
+	 * @return The top of the stack
 	 */
 	public T pop() {
 		if(item == null ) return null;
@@ -56,7 +56,7 @@ public class JStack<T> {
 	
 	/**
 	 * Looks at the item at the top of this stack without remove it.
-	 * @return
+	 * @return The top of the stack
 	 */
 	public T peek() {
 		return item;
@@ -64,10 +64,10 @@ public class JStack<T> {
 	
 	/**
 	 * Test if this stack has no items.
-	 * @return
+	 * @return True if the stack is empty
 	 */
 	public boolean isEmpty() {
-		return (size == 0);
+		return (item == null);
 	}
 	
 	/**
@@ -81,7 +81,7 @@ public class JStack<T> {
 	
 	/**
 	 * Returns the number of items that is containing in the stack.
-	 * @return
+	 * @return The number of items of the stack
 	 */
 	public int size() {
 		return size;
@@ -90,7 +90,7 @@ public class JStack<T> {
 	/**
 	 * Returns if exist an specified item into the stack.
 	 * @param item
-	 * @return
+	 * @return True if exist the item
 	 */	
 	public boolean exist(T item) {
 		if(this.item != item && next == null) return false;
